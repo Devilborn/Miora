@@ -1,0 +1,1820 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MIORA — Handmade floral products, hair accessories, keychains, and custom gifts made with love using colorful pipe cleaners.">
+    <meta name="theme-color" content="#F5F1ED">
+    <title>MIORA — Floral Handmade Products</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-primary: #F5F1ED;
+            --bg-secondary: #FDFBF8;
+            --text-dark: #3D3D3D;
+            --text-light: #6B6B6B;
+            --accent-green: #6B8E7F;
+            --accent-pink: #D4A5A5;
+            --accent-gold: #C9A969;
+            --border-color: #E8E3DC;
+            --shadow-soft: 0 4px 12px rgba(61, 61, 61, 0.08);
+            --shadow-medium: 0 8px 20px rgba(61, 61, 61, 0.12);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Lora', serif;
+            line-height: 1.2;
+            color: var(--text-dark);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--bg-secondary);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: box-shadow 0.3s ease;
+        }
+
+        header.scrolled {
+            box-shadow: var(--shadow-soft);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-family: 'Lora', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            color: var(--accent-green);
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 1.5rem;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--shadow-medium);
+            z-index: 99;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            color: white;
+            font-size: 1.8rem;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 24px rgba(37, 211, 102, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 1.5rem 3rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, #F9F7F4 100%);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero-content {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero-logo {
+            max-width: 200px;
+            height: auto;
+            margin: 0 auto 2rem;
+        }
+
+        .hero h1 {
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .hero-tagline {
+            font-size: 1.1rem;
+            color: var(--accent-green);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero p {
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .hero-ctas {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Mobile-first polish: header + hero */
+        .nav-toggle {
+            position: relative;
+            font-size: 0;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 2px 8px rgba(61,61,61,0.05);
+        }
+
+        .nav-toggle::before,
+        .nav-toggle::after {
+            content: '';
+            position: absolute;
+            width: 18px;
+            height: 2px;
+            background: var(--text-dark);
+            border-radius: 2px;
+            transition: transform 0.25s ease, top 0.25s ease;
+        }
+
+        .nav-toggle::before { top: 16px; }
+        .nav-toggle::after { top: 24px; }
+
+        .nav-toggle.open::before { top: 20px; transform: rotate(45deg); }
+        .nav-toggle.open::after { top: 20px; transform: rotate(-45deg); }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before,
+        .hero::after {
+            content: '';
+            position: absolute;
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.45;
+        }
+
+        .hero::before {
+            top: -65px;
+            left: -65px;
+            background: rgba(212,165,165,0.14);
+        }
+
+        .hero::after {
+            right: -70px;
+            bottom: -70px;
+            background: rgba(107,142,127,0.12);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-logo {
+            display: block;
+            border-radius: 50%;
+            filter: drop-shadow(0 8px 16px rgba(61,61,61,0.08));
+        }
+
+        .hero h1 {
+            letter-spacing: 0.08em;
+        }
+
+        .hero-tagline {
+            letter-spacing: 0.01em;
+        }
+
+        .hero-description {
+            max-width: 580px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 0.9rem 2rem;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background: var(--accent-green);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #5A7A6F;
+            box-shadow: var(--shadow-medium);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 2px solid var(--accent-pink);
+            color: var(--accent-pink);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-pink);
+            color: white;
+        }
+
+        /* Filter Section */
+        .filter-section {
+            padding: 2rem 1.5rem;
+            display: flex;
+            gap: 1rem;
+            overflow-x: auto;
+            justify-content: center;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .filter-btn {
+            padding: 0.7rem 1.5rem;
+            border: 2px solid var(--border-color);
+            background: transparent;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-light);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--accent-green);
+            border-color: var(--accent-green);
+            color: white;
+        }
+
+        /* Search Bar */
+        .search-container {
+            padding: 1.5rem 1.5rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-input {
+            width: 100%;
+            max-width: 400px;
+            padding: 0.8rem 1.2rem;
+            border: 2px solid var(--border-color);
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent-green);
+            box-shadow: 0 0 0 3px rgba(107, 142, 127, 0.1);
+        }
+
+        /* Section */
+        .section {
+            padding: 3rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .section-title h2 {
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title p {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        /* Product Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background: #f0f0f0;
+            display: block;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--accent-pink);
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+
+        .product-badge.bestseller {
+            background: var(--accent-gold);
+        }
+
+        .product-info {
+            padding: 1.2rem;
+        }
+
+        .product-category {
+            font-size: 0.8rem;
+            color: var(--accent-green);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.3rem;
+        }
+
+        .product-name {
+            font-family: 'Lora', serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+            color: var(--text-dark);
+        }
+
+        .product-description {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .product-price {
+            font-family: 'Lora', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--accent-green);
+            margin-bottom: 1rem;
+        }
+
+        .product-actions {
+            display: flex;
+            gap: 0.8rem;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .like-btn {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .like-btn:hover {
+            transform: scale(1.2);
+        }
+
+        .like-btn.liked {
+            animation: heartBeat 0.4s ease;
+        }
+
+        @keyframes heartBeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .btn-small {
+            padding: 0.6rem 1rem;
+            font-size: 0.85rem;
+            border-radius: 4px;
+        }
+
+        /* Category Grid */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .category-card:hover {
+            border-color: var(--accent-green);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .category-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .category-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* Custom Orders Section */
+        .custom-section {
+            background: linear-gradient(135deg, rgba(107, 142, 127, 0.05) 0%, rgba(212, 165, 165, 0.05) 100%);
+            padding: 3rem 1.5rem;
+        }
+
+        .custom-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .custom-content h2 {
+            margin-bottom: 1rem;
+        }
+
+        .custom-content p {
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .custom-ctas {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-method {
+            padding: 1.5rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--shadow-soft);
+        }
+
+        .contact-method h3 {
+            margin-bottom: 0.8rem;
+            color: var(--accent-green);
+        }
+
+        .contact-method a {
+            color: var(--accent-green);
+            text-decoration: none;
+            font-weight: 600;
+            word-break: break-all;
+        }
+
+        .contact-method a:hover {
+            text-decoration: underline;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 2.5rem 1.5rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-family: 'Lora', serif;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-desc {
+            margin-bottom: 1.5rem;
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-green);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s ease;
+        }
+
+        .social-icon:hover {
+            background: var(--accent-green);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1rem;
+            color: #999;
+            font-size: 0.85rem;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 200;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 12px;
+            width: 100%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+            z-index: 10;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .modal-category {
+            font-size: 0.8rem;
+            color: var(--accent-green);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .modal-name {
+            font-family: 'Lora', serif;
+            font-size: 1.8rem;
+            margin: 0.8rem 0;
+        }
+
+        .modal-price {
+            font-family: 'Lora', serif;
+            font-size: 1.5rem;
+            color: var(--accent-green);
+            margin: 1rem 0;
+            font-weight: 600;
+        }
+
+        .modal-description {
+            color: var(--text-light);
+            margin: 1.5rem 0;
+            line-height: 1.7;
+        }
+
+        .modal-ctas {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+
+        /* ===== MOBILE PRODUCT / CATEGORY UX v3 ===== */
+        .category-card {
+            min-height: 132px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .category-card:active {
+            transform: scale(0.98);
+        }
+
+        .filter-section {
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .filter-section::-webkit-scrollbar {
+            display: none;
+        }
+
+        .filter-btn {
+            flex: 0 0 auto;
+            min-height: 44px;
+        }
+
+        .search-input {
+            min-height: 48px;
+        }
+
+        .product-card {
+            min-width: 0;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .product-card:active {
+            transform: scale(0.995);
+        }
+
+        .product-image {
+            aspect-ratio: 1 / 1;
+            height: auto;
+        }
+
+        .product-description {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+        }
+
+        .product-actions .like-btn,
+        .product-actions .btn-small {
+            min-height: 42px;
+        }
+
+        .like-btn {
+            width: 44px;
+            min-width: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            overscroll-behavior: contain;
+        }
+
+        @media (max-width: 768px) {
+            .categories-grid {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+
+            .category-card {
+                min-height: 116px;
+                padding: 0.9rem 0.5rem;
+            }
+
+            .category-emoji {
+                font-size: 2rem;
+                margin-bottom: 0.55rem;
+            }
+
+            .category-name {
+                font-size: 0.82rem;
+                line-height: 1.25;
+            }
+
+            .search-container {
+                padding: 1rem;
+            }
+
+            .filter-section {
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                padding: 0.85rem 1rem 1rem;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 0.85rem;
+            }
+
+            .product-image {
+                aspect-ratio: 1 / 1;
+            }
+
+            .product-info {
+                padding: 0.85rem;
+            }
+
+            .product-category {
+                font-size: 0.68rem;
+            }
+
+            .product-name {
+                font-size: 0.98rem;
+                line-height: 1.25;
+            }
+
+            .product-description {
+                font-size: 0.76rem;
+                line-height: 1.45;
+                margin-bottom: 0.65rem;
+            }
+
+            .product-price {
+                font-size: 1.05rem;
+                margin-bottom: 0.7rem;
+            }
+
+            .product-actions {
+                gap: 0.45rem;
+            }
+
+            .product-actions .btn-small {
+                flex: 1;
+                padding: 0.55rem 0.55rem;
+                font-size: 0.78rem;
+            }
+
+            .product-badge {
+                top: 0.65rem;
+                right: 0.65rem;
+                padding: 0.32rem 0.5rem;
+                font-size: 0.62rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .categories-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 0.7rem;
+            }
+
+            .category-card {
+                min-height: 104px;
+                padding: 0.75rem;
+            }
+
+            .category-emoji {
+                font-size: 1.8rem;
+            }
+
+            .category-name {
+                font-size: 0.85rem;
+            }
+
+            .products-grid {
+                gap: 0.7rem;
+            }
+
+            .product-info {
+                padding: 0.7rem;
+            }
+
+            .product-name {
+                font-size: 0.9rem;
+            }
+
+            .product-description {
+                font-size: 0.72rem;
+            }
+
+            .product-actions .btn-small {
+                font-size: 0.72rem;
+                padding-inline: 0.4rem;
+            }
+
+            .like-btn {
+                width: 40px;
+                min-width: 40px;
+                font-size: 1.3rem;
+            }
+
+            .product-badge {
+                top: 0.5rem;
+                right: 0.5rem;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                gap: 0;
+                background: var(--bg-secondary);
+                border-top: 1px solid var(--border-color);
+                border-bottom: 1px solid var(--border-color);
+                box-shadow: var(--shadow-medium);
+                padding: 0.5rem 1rem 0.75rem;
+            }
+
+            .nav-menu.open {
+                display: flex;
+            }
+
+            .nav-menu li {
+                width: 100%;
+            }
+
+            .nav-menu a {
+                display: block;
+                padding: 0.8rem 0.75rem;
+                border-radius: 8px;
+            }
+
+            .nav-menu a:active,
+            .nav-menu a:hover {
+                background: rgba(107, 142, 127, 0.08);
+            }
+
+            .nav-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 44px;
+                height: 44px;
+                padding: 0;
+                border-radius: 10px;
+                background: var(--bg-secondary);
+            }
+
+            header {
+                position: sticky;
+            }
+
+            .header-content {
+                position: relative;
+                padding: 0.75rem 1rem;
+            }
+
+            .hero {
+                padding: 2.5rem 1rem 2.25rem;
+            }
+
+            .hero-content {
+                width: 100%;
+            }
+
+            .hero-logo {
+                width: 120px;
+                max-width: 40vw;
+                margin-bottom: 1.25rem;
+            }
+
+            .hero-tagline {
+                font-size: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .hero-description {
+                font-size: 0.92rem;
+                line-height: 1.65;
+                margin-bottom: 1.4rem;
+            }
+
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 0.85rem;
+            }
+
+            .product-card {
+                min-width: 0;
+                border-radius: 10px;
+            }
+
+            .product-image {
+                height: auto;
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
+            }
+
+            .product-info {
+                padding: 0.85rem;
+            }
+
+            .product-description {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+            }
+
+            .product-actions {
+                gap: 0.5rem;
+            }
+
+            .btn-small {
+                min-height: 40px;
+                padding: 0.55rem 0.8rem;
+            }
+
+            .categories-grid {
+                grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+                gap: 0.8rem;
+            }
+
+            .contact-methods {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 2rem 1rem;
+            }
+
+            .filter-section {
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                padding: 1rem;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+            }
+
+            .filter-section::-webkit-scrollbar {
+                display: none;
+            }
+
+            .filter-btn {
+                flex: 0 0 auto;
+                min-height: 42px;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+                bottom: 1.5rem;
+                right: 1rem;
+            }
+
+            .modal {
+                padding: 0.75rem;
+                align-items: flex-end;
+            }
+
+            .modal-content {
+                max-height: 92vh;
+                border-radius: 16px 16px 0 0;
+            }
+
+            .modal-body {
+                padding: 1.25rem;
+            }
+
+            .modal-image {
+                height: min(62vw, 280px);
+            }
+
+            .modal-close {
+                width: 40px;
+                height: 40px;
+                background: rgba(255, 255, 255, 0.92);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            .hero {
+                padding: 2rem 1rem 1.9rem;
+            }
+
+            .hero-logo {
+                width: 105px;
+                max-width: 35vw;
+            }
+
+            .hero h1 {
+                font-size: 1.55rem;
+                margin-bottom: 0.75rem;
+            }
+
+            .hero-ctas {
+                flex-direction: column;
+                width: 100%;
+                gap: 0.7rem;
+            }
+
+            .hero-ctas .btn,
+            .custom-ctas .btn {
+                width: 100%;
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 0.7rem;
+            }
+
+            .product-actions .btn-small {
+                width: auto;
+                flex: 1;
+            }
+
+            .product-info {
+                padding: 0.8rem;
+            }
+
+            .product-name {
+                font-size: 0.95rem;
+            }
+
+            .product-price {
+                font-size: 1rem;
+            }
+
+            .custom-ctas {
+                flex-direction: column;
+            }
+
+            .modal-ctas {
+                flex-direction: column;
+            }
+        }
+
+        /* Decorative element */
+        .decorative-star {
+            display: inline-block;
+            color: var(--accent-gold);
+            font-size: 0.8rem;
+            margin: 0 0.3rem;
+        }
+
+        /* No results message */
+        .no-results {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-light);
+        }
+
+        .no-results p {
+            margin-bottom: 1rem;
+        }
+
+        /* Smooth transitions */
+        * {
+            transition-property: background-color, border-color, color;
+            transition-duration: 0.3s;
+            transition-timing-function: ease;
+        }
+
+        button, a {
+            transition-property: all;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="header-content">
+            <a href="#home" class="logo">MIORA</a>
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="navMenu"></button>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#shop">Shop</a></li>
+                    <li><a href="#categories">Categories</a></li>
+                    <li><a href="#bestsellers">Best Sellers</a></li>
+                    <li><a href="#custom">Custom Orders</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <img src="logo.jpeg">
+            <h1>MIORA</h1>
+            <p class="hero-tagline">Little things, handmade with love <span class="decorative-star">✦</span></p>
+            <p class="hero-description">Discover handmade flowers, accessories, and custom gifts crafted with colorful pipe cleaners and creative passion.</p>
+            <div class="hero-ctas">
+                <a href="#shop" class="btn btn-primary">Explore Collection</a>
+                <a href="#custom" class="btn btn-secondary">Custom Order</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="section" id="categories">
+        <div class="section-title">
+            <h2>Shop By Category</h2>
+            <p>Find exactly what you're looking for</p>
+        </div>
+        <div class="categories-grid">
+            <div class="category-card" onclick="filterByCategory('flowers')">
+                <div class="category-emoji">🌸</div>
+                <div class="category-name">Flowers</div>
+            </div>
+            <div class="category-card" onclick="filterByCategory('hair')">
+                <div class="category-emoji">🎀</div>
+                <div class="category-name">Hair Clips</div>
+            </div>
+            <div class="category-card" onclick="filterByCategory('keychains')">
+                <div class="category-emoji">🔑</div>
+                <div class="category-name">Keychains</div>
+            </div>
+            <div class="category-card" onclick="filterByCategory('miniatures')">
+                <div class="category-emoji">🧸</div>
+                <div class="category-name">Miniatures</div>
+            </div>
+            <div class="category-card" onclick="filterByCategory('frames')">
+                <div class="category-emoji">🖼️</div>
+                <div class="category-name">Frames</div>
+            </div>
+            <div class="category-card" onclick="filterByCategory('resin')">
+                <div class="category-emoji">✨</div>
+                <div class="category-name">Resin</div>
+            </div>
+            <div class="category-card" onclick="filterByCategory('gifts')">
+                <div class="category-emoji">💝</div>
+                <div class="category-name">Gifts</div>
+            </div>
+            <div class="category-card" onclick="filterByCategory('')">
+                <div class="category-emoji">🎨</div>
+                <div class="category-name">All Products</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search & Filter -->
+    <div class="search-container">
+        <input type="search" id="searchInput" class="search-input" autocomplete="off" enterkeyhint="search" placeholder="Search products...">
+    </div>
+
+    <div class="filter-section" id="filterSection">
+        <button class="filter-btn active" onclick="filterByCategory('')">All</button>
+        <button class="filter-btn" onclick="filterByCategory('bestseller')">Best Sellers</button>
+        <button class="filter-btn" onclick="filterByCategory('new')">New In</button>
+        <button class="filter-btn" onclick="filterByCategory('offer')">Offers</button>
+    </div>
+
+    <!-- Products Section -->
+    <section class="section" id="shop">
+        <div class="section-title">
+            <h2>Our Collection</h2>
+            <p>Handpicked creations just for you</p>
+        </div>
+        <div id="productsContainer" class="products-grid"></div>
+        <div id="noResults" class="no-results" style="display: none;">
+            <p>No products found. Try adjusting your search or filters.</p>
+        </div>
+    </section>
+
+    <!-- Best Sellers -->
+    <section class="section" id="bestsellers">
+        <div class="section-title">
+            <h2>Customer Favorites</h2>
+            <p>Our most loved creations</p>
+        </div>
+        <div id="bestsellersContainer" class="products-grid"></div>
+    </section>
+
+    <!-- Custom Orders -->
+    <section class="custom-section" id="custom">
+        <div class="custom-content">
+            <h2>Want Something Made Just For You?</h2>
+            <p>MIORA creates custom handmade pieces tailored to your dreams. Whether it's a personalized photo frame, a custom color combination, or a unique miniature — if you can imagine it, we can create it.</p>
+            <div class="custom-ctas">
+                <a href="https://wa.me/919876543210" class="btn btn-primary" onclick="openWhatsAppCustom(); return false;">Discuss on WhatsApp</a>
+                <a href="https://instagram.com/miora.handmade" class="btn btn-secondary" onclick="openInstagram(); return false;">Message on Instagram</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="section-title">
+            <h2>Get In Touch</h2>
+            <p>We'd love to hear from you!</p>
+        </div>
+        <div class="contact-methods">
+            <div class="contact-method">
+                <div class="contact-icon">💬</div>
+                <h3>WhatsApp</h3>
+                <p>Chat with us directly</p>
+                <a href="https://wa.me/919876543210?text=Hi%20MIORA!" id="whatsappLink" target="_blank">+91 98765 43210</a>
+            </div>
+            <div class="contact-method">
+                <div class="contact-icon">📷</div>
+                <h3>Instagram</h3>
+                <p>Follow for updates</p>
+                <a href="https://instagram.com/miora.handmade" id="instagramLink" target="_blank">@miora.handmade</a>
+            </div>
+            <div class="contact-method">
+                <div class="contact-icon">📧</div>
+                <h3>Email</h3>
+                <p>For inquiries</p>
+                <a href="mailto:hello@miora.com" id="emailLink">hello@miora.com</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <img id="modalImage" src="" alt="" class="modal-image">
+            <div class="modal-body">
+                <div class="modal-category" id="modalCategory"></div>
+                <h2 class="modal-name" id="modalName"></h2>
+                <div class="modal-price" id="modalPrice"></div>
+                <p class="modal-description" id="modalDescription"></p>
+                <div class="modal-ctas">
+                    <button class="btn btn-primary" onclick="contactAboutProduct()" style="flex: 1;">Ask on WhatsApp</button>
+                    <button class="btn btn-secondary" onclick="likeProductFromModal()" style="flex: 1;">♡ Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Float Button -->
+    <a href="https://wa.me/919876543210?text=Hi%20MIORA!" class="whatsapp-float" target="_blank" title="Chat on WhatsApp">💬</a>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">MIORA</div>
+            <p class="footer-desc">Handmade floral products and creative accessories crafted with love using colorful pipe cleaners.</p>
+            <div class="footer-social">
+                <a href="https://instagram.com/miora.handmade" class="social-icon" target="_blank" title="Instagram">📷</a>
+                <a href="https://wa.me/919876543210" class="social-icon" target="_blank" title="WhatsApp">💬</a>
+            </div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#shop">Shop</a>
+                <a href="#custom">Custom Orders</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 MIORA. All handmade with love. <span class="decorative-star">✦</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ===== PRODUCT DATA =====
+        // EDIT THIS SECTION TO ADD/UPDATE PRODUCTS
+        const allProducts = [
+            {
+                id: 1,
+                name: "Cherry Blossom Hair Clip",
+                category: "hair",
+                price: "₹299",
+                image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%23FEE5EC' width='300' height='300'/%3E%3Ccircle cx='150' cy='120' r='30' fill='%23D4A5A5'/%3E%3Ccircle cx='130' cy='100' r='20' fill='%23E8C5CE'/%3E%3Ccircle cx='170' cy='100' r='20' fill='%23E8C5CE'/%3E%3Ccircle cx='150' cy='80' r='20' fill='%23F0D5DD'/%3E%3Crect x='140' y='150' width='20' height='80' fill='%236B8E7F'/%3E%3Ctext x='150' y='270' font-size='12' text-anchor='middle' fill='%236B8E7F'%3EHandmade%3C/text%3E%3C/svg%3E",
+                description: "Delicate handmade hair clip featuring cherry blossoms in soft pastel pink. Perfect for adding a touch of spring to any hairstyle.",
+                bestseller: true,
+                new: false,
+                offer: false
+            },
+            {
+                id: 2,
+                name: "Sunflower Keychain",
+                category: "keychains",
+                price: "₹149",
+                image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%23FFFAE5' width='300' height='300'/%3E%3Ccircle cx='150' cy='130' r='25' fill='%23F4D03F'/%3E%3Ccircle cx='120' cy='110' r='18' fill='%23FFED4E'/%3E%3Ccircle cx='180' cy='110' r='18' fill='%23FFED4E'/%3E%3Ccircle cx='150' cy='100' r='18' fill='%23FFED4E'/%3E%3Ccircle cx='120' cy='150' r='18' fill='%23FFED4E'/%3E%3Ccircle cx='180' cy='150' r='18' fill='%23FFED4E'/%3E%3Crect x='145' y='160' width='10' height='60' fill='%236B8E7F'/%3E%3Ctext x='150' y='270' font-size='12' text-anchor='middle' fill='%236B8E7F'%3EHandmade%3C/text%3E%3C/svg%3E",
+                description: "Bright and cheerful sunflower keychain made with vibrant yellow pipe cleaners. A sunny companion for your keys!",
+                bestseller: false,
+                new: true,
+                offer: false
+            },
+            {
+                id: 3,
+                name: "Rose Flower Bouquet",
+                category: "flowers",
+                price: "₹399",
+                image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%23F5F1ED' width='300' height='300'/%3E%3Ccircle cx='100' cy='100' r='25' fill='%23D4594C'/%3E%3Ccircle cx='150' cy='80' r='25' fill='%23E8705D'/%3E%3Ccircle cx='200' cy='100' r='25' fill='%23D4594C'/%3E%3Crect x='95' y='120' width='20' height='100' fill='%236B8E7F'/%3E%3Crect x='145' y='130' width='20' height='90' fill='%236B8E7F'/%3E%3Crect x='195' y='120' width='20' height='100' fill='%236B8E7F'/%3E%3Ctext x='150' y='270' font-size='12' text-anchor='middle' fill='%236B8E7F'%3EHandmade%3C/text%3E%3C/svg%3E",
+                description: "A beautiful trio of handmade roses in rich red and pink tones. Perfect for decoration or gifting.",
+                bestseller: true,
+                new: false,
+                offer: true,
+                originalPrice: "₹499",
+                offerPrice: "₹399"
+            },
+            {
+                id: 4,
+                name: "Miniature Potted Succulent",
+                category: "miniatures",
+                price: "₹199",
+                image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%23F0F0F0' width='300' height='300'/%3E%3Crect x='100' y='160' width='100' height='80' fill='%23C9A969'/%3E%3Ccircle cx='130' cy='140' r='30' fill='%2390C590'/%3E%3Ccircle cx='150' cy='110' r='25' fill='%23A8D5A8'/%3E%3Ccircle cx='170' cy='130' r='28' fill='%2390C590'/%3E%3Ctext x='150' y='270' font-size='12' text-anchor='middle' fill='%236B8E7F'%3EHandmade%3C/text%3E%3C/svg%3E",
+                description: "Tiny handmade succulent in a ceramic pot. A perfect desk companion or gift for plant lovers.",
+                bestseller: false,
+                new: true,
+                offer: false
+            },
+            {
+                id: 5,
+                name: "Custom Photo Frame",
+                category: "frames",
+                price: "₹349",
+                image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect x='50' y='50' width='200' height='200' fill='%23F5E6D3' stroke='%236B8E7F' stroke-width='3'/%3E%3Crect x='70' y='70' width='160' height='160' fill='%23E8F0ED'/%3E%3Ctext x='150' y='160' font-size='12' text-anchor='middle' fill='%23999'%3EYour Photo%3C/text%3E%3Ctext x='150' y='270' font-size='12' text-anchor='middle' fill='%236B8E7F'%3EHandmade%3C/text%3E%3C/svg%3E",
+                description: "Beautiful handmade photo frame decorated with colorful pipe cleaner flowers. Personalize with your favorite memory!",
+                bestseller: false,
+                new: false,
+                offer: false
+            },
+            {
+                id: 6,
+                name: "Resin Art Coaster Set",
+                category: "resin",
+                price: "₹249",
+                image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%23E8D5C4' width='300' height='300'/%3E%3Crect x='80' y='80' width='70' height='70' fill='%23D4A5A5' rx='5'/%3E%3Crect x='180' y='80' width='70' height='70' fill='%23A8D5A8' rx='5'/%3E%3Crect x='80' y='180' width='70' height='70' fill='%23FFE5B4' rx='5'/%3E%3Crect x='180' y='180' width='70' height='70' fill='%23B4D8FF' rx='5'/%3E%3Ctext x='150' y='270' font-size='12' text-anchor='middle' fill='%236B8E7F'%3EHandmade%3C/text%3E%3C/svg%3E",
+                description: "Set of 4 beautiful resin coasters with pastel colors. Handcrafted with care for your home.",
+                bestseller: true,
+                new: false,
+                offer: false
+            },
+            {
+                id: 7,
+                name: "Personalized Gift Box",
+                category: "gifts",
+                price: "₹299",
+                image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect x='70' y='80' width='160' height='140' fill='%23FFD4D4'/%3E%3Crect x='70' y='80' width='160' height='30' fill='%23D4A5A5'/%3E%3Cpath d='M 130 80 Q 130 50 150 50 Q 170 50 170 80' fill='%23F4D03F'/%3E%3Ctext x='150' y='270' font-size='12' text-anchor='middle' fill='%236B8E7F'%3EHandmade%3C/text%3E%3C/svg%3E",
+                description: "Beautifully wrapped handmade gift box filled with love. Perfect for special occasions and celebrations.",
+                bestseller: false,
+                new: true,
+                offer: true,
+                originalPrice: "₹399",
+                offerPrice: "₹299"
+            },
+            {
+                id: 8,
+                name: "Lavender Dream Wreath",
+                category: "flowers",
+                price: "₹449",
+                image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%23F5F1ED' width='300' height='300'/%3E%3Ccircle cx='150' cy='150' r='80' fill='none' stroke='%236B8E7F' stroke-width='8'/%3E%3Ccircle cx='150' cy='100' r='15' fill='%23B5A7D9'/%3E%3Ccircle cx='180' cy='120' r='15' fill='%23C5B5E8'/%3E%3Ccircle cx='200' cy='150' r='15' fill='%23B5A7D9'/%3E%3Ccircle cx='180' cy='180' r='15' fill='%23C5B5E8'/%3E%3Ccircle cx='150' cy='200' r='15' fill='%23B5A7D9'/%3E%3Ccircle cx='120' cy='180' r='15' fill='%23C5B5E8'/%3E%3Ccircle cx='100' cy='150' r='15' fill='%23B5A7D9'/%3E%3Ccircle cx='120' cy='120' r='15' fill='%23C5B5E8'/%3E%3Ctext x='150' y='270' font-size='12' text-anchor='middle' fill='%236B8E7F'%3EHandmade%3C/text%3E%3C/svg%3E",
+                description: "A dreamy lavender wreath made with purple pipe cleaners. Beautiful wall decoration for your space.",
+                bestseller: false,
+                new: false,
+                offer: false
+            }
+        ];
+
+        let favorites = JSON.parse(localStorage.getItem('mioraFavorites')) || [];
+        let currentFilter = '';
+        let currentSearch = '';
+        let currentProduct = null;
+
+        // ===== INITIALIZATION =====
+        document.addEventListener('DOMContentLoaded', function() {
+            renderProducts(allProducts);
+            renderBestsellers();
+            setupEventListeners();
+        });
+
+        // ===== EVENT LISTENERS =====
+        function setupEventListeners() {
+            document.querySelectorAll('#navMenu a').forEach(link => {
+                link.addEventListener('click', function() {
+                    document.getElementById('navMenu').classList.remove('open');
+                });
+            });
+
+            document.getElementById('searchInput').addEventListener('input', function(e) {
+                currentSearch = e.target.value.toLowerCase();
+                applyFilters();
+            });
+
+            document.getElementById('navToggle').addEventListener('click', toggleMobileMenu);
+            document.querySelectorAll('#navMenu a').forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeMobileMenu();
+                    closeModal();
+                }
+            });
+            document.getElementById('header').addEventListener('scroll', updateHeaderScroll);
+            window.addEventListener('scroll', updateHeaderScroll);
+            window.addEventListener('resize', function() {
+                if (window.innerWidth > 768) closeMobileMenu();
+            });
+        }
+
+        function updateHeaderScroll() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        }
+
+        function toggleMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            const toggle = document.getElementById('navToggle');
+            const isOpen = navMenu.classList.toggle('open');
+            toggle.classList.toggle('open', isOpen);
+            toggle.setAttribute('aria-expanded', String(isOpen));
+            toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+        }
+
+        function closeMobileMenu() {
+            const navMenu = document.getElementById('navMenu');
+            const toggle = document.getElementById('navToggle');
+            navMenu.classList.remove('open');
+            toggle.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.setAttribute('aria-label', 'Open menu');
+        }
+
+        // ===== PRODUCT RENDERING =====
+        function renderProducts(products) {
+            const container = document.getElementById('productsContainer');
+            const noResults = document.getElementById('noResults');
+
+            if (products.length === 0) {
+                container.innerHTML = '';
+                noResults.style.display = 'block';
+                return;
+            }
+
+            noResults.style.display = 'none';
+            container.innerHTML = products.map(product => `
+                <div class="product-card" onclick="openProductDetail(${product.id})">
+                    ${product.bestseller ? '<div class="product-badge bestseller">BEST SELLER</div>' : ''}
+                    ${product.new ? '<div class="product-badge">NEW</div>' : ''}
+                    ${product.offer ? '<div class="product-badge" style="background: var(--accent-gold);">OFFER</div>' : ''}
+                    <img src="${product.image}" alt="${product.name}" class="product-image">
+                    <div class="product-info">
+                        <div class="product-category">${product.category}</div>
+                        <div class="product-name">${product.name}</div>
+                        <div class="product-description">${product.description}</div>
+                        <div class="product-price">${product.offer ? product.offerPrice : product.price}</div>
+                        <div class="product-actions">
+                            <button class="like-btn ${favorites.includes(product.id) ? 'liked' : ''}" onclick="toggleLike(event, ${product.id})">${favorites.includes(product.id) ? '❤️' : '♡'}</button>
+                            <button class="btn btn-small btn-primary" onclick="contactAboutProductCard(event, ${product.id})">Enquire</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function renderBestsellers() {
+            const bestsellers = allProducts.filter(p => p.bestseller);
+            const container = document.getElementById('bestsellersContainer');
+
+            container.innerHTML = bestsellers.map(product => `
+                <div class="product-card" onclick="openProductDetail(${product.id})">
+                    ${product.bestseller ? '<div class="product-badge bestseller">BEST SELLER</div>' : ''}
+                    <img src="${product.image}" alt="${product.name}" class="product-image">
+                    <div class="product-info">
+                        <div class="product-category">${product.category}</div>
+                        <div class="product-name">${product.name}</div>
+                        <div class="product-description">${product.description}</div>
+                        <div class="product-price">${product.price}</div>
+                        <div class="product-actions">
+                            <button class="like-btn ${favorites.includes(product.id) ? 'liked' : ''}" onclick="toggleLike(event, ${product.id})">${favorites.includes(product.id) ? '❤️' : '♡'}</button>
+                            <button class="btn btn-small btn-primary" onclick="contactAboutProductCard(event, ${product.id})">Enquire</button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // ===== FILTERING =====
+        function filterByCategory(category) {
+            currentFilter = category;
+            applyFilters();
+            
+            // Update active filter button only when the click came from a filter button.
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            if (typeof event !== 'undefined' && event && event.target && event.target.classList.contains('filter-btn')) {
+                event.target.classList.add('active');
+            }
+        }
+
+        function applyFilters() {
+            let filtered = allProducts;
+
+            // Apply category/type filter
+            if (currentFilter === 'bestseller') {
+                filtered = filtered.filter(p => p.bestseller);
+            } else if (currentFilter === 'new') {
+                filtered = filtered.filter(p => p.new);
+            } else if (currentFilter === 'offer') {
+                filtered = filtered.filter(p => p.offer);
+            } else if (currentFilter !== '') {
+                filtered = filtered.filter(p => p.category === currentFilter);
+            }
+
+            // Apply search filter
+            if (currentSearch) {
+                filtered = filtered.filter(p => 
+                    p.name.toLowerCase().includes(currentSearch) ||
+                    p.description.toLowerCase().includes(currentSearch) ||
+                    p.category.toLowerCase().includes(currentSearch)
+                );
+            }
+
+            renderProducts(filtered);
+        }
+
+        // ===== PRODUCT DETAIL MODAL =====
+        function openProductDetail(id) {
+            currentProduct = allProducts.find(p => p.id === id);
+            if (!currentProduct) return;
+
+            document.getElementById('modalCategory').textContent = currentProduct.category;
+            document.getElementById('modalName').textContent = currentProduct.name;
+            document.getElementById('modalPrice').textContent = currentProduct.offer ? currentProduct.offerPrice : currentProduct.price;
+            document.getElementById('modalDescription').textContent = currentProduct.description;
+            document.getElementById('modalImage').src = currentProduct.image;
+            document.getElementById('modalImage').alt = currentProduct.name;
+
+            document.getElementById('productModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('productModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // ===== LIKES / FAVORITES =====
+        function toggleLike(event, id) {
+            event.stopPropagation();
+            const index = favorites.indexOf(id);
+            if (index > -1) {
+                favorites.splice(index, 1);
+            } else {
+                favorites.push(id);
+            }
+            localStorage.setItem('mioraFavorites', JSON.stringify(favorites));
+            
+            // Re-render to update UI
+            applyFilters();
+            renderBestsellers();
+        }
+
+        function likeProductFromModal() {
+            if (currentProduct) {
+                toggleLike({stopPropagation: () => {}}, currentProduct.id);
+            }
+        }
+
+        // ===== CONTACT FUNCTIONS =====
+        function contactAboutProduct() {
+            if (currentProduct) {
+                const message = `Hi MIORA! I'm interested in the ${currentProduct.name}. Can you share more details?`;
+                const encodedMessage = encodeURIComponent(message);
+                window.open(`https://wa.me/9326568564?text=${encodedMessage}`, '_blank');
+            }
+        }
+
+        function contactAboutProductCard(event, id) {
+            event.stopPropagation();
+            const product = allProducts.find(p => p.id === id);
+            const message = `Hi MIORA! I'm interested in the ${product.name}. Can you share more details?`;
+            const encodedMessage = encodeURIComponent(message);
+                window.open(`https://wa.me/9326568564?text=${encodedMessage}`, '_blank');
+        }
+
+        function openWhatsAppCustom() {
+            const message = "Hi MIORA! I'd like to discuss a custom order. Please tell me more about what's possible!";
+            const encodedMessage = encodeURIComponent(message);
+                window.open(`https://wa.me/9326568564?text=${encodedMessage}`, '_blank');
+        }
+
+        function openInstagram() {
+            window.open('https://instagram.com/miora_hand_made', '_blank');
+        }
+
+        // ===== MODAL CLOSE ON OUTSIDE CLICK =====
+        document.getElementById('productModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+                document.getElementById('navMenu').classList.remove('open');
+            }
+        });
+
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                document.getElementById('navMenu').classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html>
