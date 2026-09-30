@@ -177,9 +177,14 @@
         }
 
         .hero-logo {
-            max-width: 200px;
+            width: min(170px, 42vw);
+            max-width: 170px;
             height: auto;
-            margin: 0 auto 2rem;
+            max-height: 170px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto 1.5rem;
+            border-radius: 18px;
         }
 
         .hero h1 {
@@ -1293,7 +1298,7 @@
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-content">
-            <img src="logo.jpeg">
+            <img src="logo.jpeg" alt="MIORA logo" class="hero-logo">
             <h1>MIORA</h1>
             <p class="hero-tagline">Little things, handmade with love <span class="decorative-star">✦</span></p>
             <p class="hero-description">Discover handmade flowers, accessories, and custom gifts crafted with colorful pipe cleaners and creative passion.</p>
@@ -1338,6 +1343,10 @@
             <div class="category-card" onclick="filterByCategory('gifts')">
                 <div class="category-emoji">💝</div>
                 <div class="category-name">Gifts</div>
+            </div>
+            <div class="category-card" onclick="filterByCategory('custom')">
+                <div class="category-emoji">🎨</div>
+                <div class="category-name">Custom</div>
             </div>
             <div class="category-card" onclick="filterByCategory('')">
                 <div class="category-emoji">🎨</div>
@@ -1402,19 +1411,19 @@
                 <div class="contact-icon">💬</div>
                 <h3>WhatsApp</h3>
                 <p>Chat with us directly</p>
-                <a href="https://wa.me/919876543210?text=Hi%20MIORA!" id="whatsappLink" target="_blank">+91 98765 43210</a>
+                <a href="https://wa.me/9326568564?text=Hi%20MIORA!" id="whatsappLink" target="_blank">+91 93265 68564</a>
             </div>
             <div class="contact-method">
                 <div class="contact-icon">📷</div>
                 <h3>Instagram</h3>
                 <p>Follow for updates</p>
-                <a href="https://instagram.com/miora.handmade" id="instagramLink" target="_blank">@miora.handmade</a>
+                <a href="https://instagram.com/miora_hand_made" id="instagramLink" target="_blank">@miora_hand_made</a>
             </div>
             <div class="contact-method">
                 <div class="contact-icon">📧</div>
                 <h3>Email</h3>
                 <p>For inquiries</p>
-                <a href="mailto:hello@miora.com" id="emailLink">hello@miora.com</a>
+                <a href="mailto:mahakjaiswal917@gmail.com" id="emailLink">mahakjaiswal917@gmail.com</a>
             </div>
         </div>
     </section>
@@ -1467,94 +1476,112 @@
         const allProducts = [
             {
                 id: 1,
-                name: "Cherry Blossom Hair Clip",
-                category: "hair",
-                price: "₹299",
-                image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%23FEE5EC' width='300' height='300'/%3E%3Ccircle cx='150' cy='120' r='30' fill='%23D4A5A5'/%3E%3Ccircle cx='130' cy='100' r='20' fill='%23E8C5CE'/%3E%3Ccircle cx='170' cy='100' r='20' fill='%23E8C5CE'/%3E%3Ccircle cx='150' cy='80' r='20' fill='%23F0D5DD'/%3E%3Crect x='140' y='150' width='20' height='80' fill='%236B8E7F'/%3E%3Ctext x='150' y='270' font-size='12' text-anchor='middle' fill='%236B8E7F'%3EHandmade%3C/text%3E%3C/svg%3E",
-                description: "Delicate handmade hair clip featuring cherry blossoms in soft pastel pink. Perfect for adding a touch of spring to any hairstyle.",
-                bestseller: true,
-                new: false,
+                name: "Custom Product 1",
+                category: "custom",
+                price: "Price on Request",
+                image: "CUSTOM1.jpeg",
+                description: "A handmade custom creation made specially for you. Contact MIORA for details and personalization.",
+                bestseller: false,
+                new: true,
                 offer: false
             },
             {
                 id: 2,
-                name: "Sunflower Keychain",
-                category: "keychains",
-                price: "₹149",
-                image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%23FFFAE5' width='300' height='300'/%3E%3Ccircle cx='150' cy='130' r='25' fill='%23F4D03F'/%3E%3Ccircle cx='120' cy='110' r='18' fill='%23FFED4E'/%3E%3Ccircle cx='180' cy='110' r='18' fill='%23FFED4E'/%3E%3Ccircle cx='150' cy='100' r='18' fill='%23FFED4E'/%3E%3Ccircle cx='120' cy='150' r='18' fill='%23FFED4E'/%3E%3Ccircle cx='180' cy='150' r='18' fill='%23FFED4E'/%3E%3Crect x='145' y='160' width='10' height='60' fill='%236B8E7F'/%3E%3Ctext x='150' y='270' font-size='12' text-anchor='middle' fill='%236B8E7F'%3EHandmade%3C/text%3E%3C/svg%3E",
-                description: "Bright and cheerful sunflower keychain made with vibrant yellow pipe cleaners. A sunny companion for your keys!",
+                name: "Custom Product 2",
+                category: "custom",
+                price: "Price on Request",
+                image: "CUSTPM2.jpeg",
+                description: "A personalized handmade piece created according to your idea, colors, and requirements.",
                 bestseller: false,
                 new: true,
                 offer: false
             },
             {
                 id: 3,
-                name: "Rose Flower Bouquet",
-                category: "flowers",
-                price: "₹399",
-                image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%23F5F1ED' width='300' height='300'/%3E%3Ccircle cx='100' cy='100' r='25' fill='%23D4594C'/%3E%3Ccircle cx='150' cy='80' r='25' fill='%23E8705D'/%3E%3Ccircle cx='200' cy='100' r='25' fill='%23D4594C'/%3E%3Crect x='95' y='120' width='20' height='100' fill='%236B8E7F'/%3E%3Crect x='145' y='130' width='20' height='90' fill='%236B8E7F'/%3E%3Crect x='195' y='120' width='20' height='100' fill='%236B8E7F'/%3E%3Ctext x='150' y='270' font-size='12' text-anchor='middle' fill='%236B8E7F'%3EHandmade%3C/text%3E%3C/svg%3E",
-                description: "A beautiful trio of handmade roses in rich red and pink tones. Perfect for decoration or gifting.",
-                bestseller: true,
-                new: false,
-                offer: true,
-                originalPrice: "₹499",
-                offerPrice: "₹399"
+                name: "Keychain 1",
+                category: "keychains",
+                price: "Price on Request",
+                image: "KC1.jpeg",
+                description: "Handmade pipe-cleaner keychain with a colorful, playful finish. Perfect for bags, keys, and gifting.",
+                bestseller: false,
+                new: true,
+                offer: false
             },
             {
                 id: 4,
-                name: "Miniature Potted Succulent",
-                category: "miniatures",
-                price: "₹199",
-                image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%23F0F0F0' width='300' height='300'/%3E%3Crect x='100' y='160' width='100' height='80' fill='%23C9A969'/%3E%3Ccircle cx='130' cy='140' r='30' fill='%2390C590'/%3E%3Ccircle cx='150' cy='110' r='25' fill='%23A8D5A8'/%3E%3Ccircle cx='170' cy='130' r='28' fill='%2390C590'/%3E%3Ctext x='150' y='270' font-size='12' text-anchor='middle' fill='%236B8E7F'%3EHandmade%3C/text%3E%3C/svg%3E",
-                description: "Tiny handmade succulent in a ceramic pot. A perfect desk companion or gift for plant lovers.",
+                name: "Keychain 2",
+                category: "keychains",
+                price: "Price on Request",
+                image: "KC2.jpeg",
+                description: "A cute handmade keychain crafted with colorful pipe cleaners. Message MIORA for availability.",
                 bestseller: false,
                 new: true,
                 offer: false
             },
             {
                 id: 5,
-                name: "Custom Photo Frame",
-                category: "frames",
-                price: "₹349",
-                image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect x='50' y='50' width='200' height='200' fill='%23F5E6D3' stroke='%236B8E7F' stroke-width='3'/%3E%3Crect x='70' y='70' width='160' height='160' fill='%23E8F0ED'/%3E%3Ctext x='150' y='160' font-size='12' text-anchor='middle' fill='%23999'%3EYour Photo%3C/text%3E%3Ctext x='150' y='270' font-size='12' text-anchor='middle' fill='%236B8E7F'%3EHandmade%3C/text%3E%3C/svg%3E",
-                description: "Beautiful handmade photo frame decorated with colorful pipe cleaner flowers. Personalize with your favorite memory!",
+                name: "Keychain 3",
+                category: "keychains",
+                price: "Price on Request",
+                image: "KC3.jpeg",
+                description: "Handmade decorative keychain designed to add a little personality to your everyday essentials.",
                 bestseller: false,
-                new: false,
+                new: true,
                 offer: false
             },
             {
                 id: 6,
-                name: "Resin Art Coaster Set",
-                category: "resin",
-                price: "₹249",
-                image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%23E8D5C4' width='300' height='300'/%3E%3Crect x='80' y='80' width='70' height='70' fill='%23D4A5A5' rx='5'/%3E%3Crect x='180' y='80' width='70' height='70' fill='%23A8D5A8' rx='5'/%3E%3Crect x='80' y='180' width='70' height='70' fill='%23FFE5B4' rx='5'/%3E%3Crect x='180' y='180' width='70' height='70' fill='%23B4D8FF' rx='5'/%3E%3Ctext x='150' y='270' font-size='12' text-anchor='middle' fill='%236B8E7F'%3EHandmade%3C/text%3E%3C/svg%3E",
-                description: "Set of 4 beautiful resin coasters with pastel colors. Handcrafted with care for your home.",
-                bestseller: true,
-                new: false,
+                name: "Miniature Pot 1",
+                category: "miniatures",
+                price: "Price on Request",
+                image: "pot1.jpeg",
+                description: "A tiny handmade pot creation, perfect for desks, shelves, gifting, and cute room decor.",
+                bestseller: false,
+                new: true,
                 offer: false
             },
             {
                 id: 7,
-                name: "Personalized Gift Box",
-                category: "gifts",
-                price: "₹299",
-                image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect x='70' y='80' width='160' height='140' fill='%23FFD4D4'/%3E%3Crect x='70' y='80' width='160' height='30' fill='%23D4A5A5'/%3E%3Cpath d='M 130 80 Q 130 50 150 50 Q 170 50 170 80' fill='%23F4D03F'/%3E%3Ctext x='150' y='270' font-size='12' text-anchor='middle' fill='%236B8E7F'%3EHandmade%3C/text%3E%3C/svg%3E",
-                description: "Beautifully wrapped handmade gift box filled with love. Perfect for special occasions and celebrations.",
+                name: "Miniature Pot 2",
+                category: "miniatures",
+                price: "Price on Request",
+                image: "pot2.jpeg",
+                description: "A charming handmade miniature pot made with care. A small decorative piece with a handmade touch.",
                 bestseller: false,
                 new: true,
-                offer: true,
-                originalPrice: "₹399",
-                offerPrice: "₹299"
+                offer: false
             },
             {
                 id: 8,
-                name: "Lavender Dream Wreath",
-                category: "flowers",
-                price: "₹449",
-                image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Crect fill='%23F5F1ED' width='300' height='300'/%3E%3Ccircle cx='150' cy='150' r='80' fill='none' stroke='%236B8E7F' stroke-width='8'/%3E%3Ccircle cx='150' cy='100' r='15' fill='%23B5A7D9'/%3E%3Ccircle cx='180' cy='120' r='15' fill='%23C5B5E8'/%3E%3Ccircle cx='200' cy='150' r='15' fill='%23B5A7D9'/%3E%3Ccircle cx='180' cy='180' r='15' fill='%23C5B5E8'/%3E%3Ccircle cx='150' cy='200' r='15' fill='%23B5A7D9'/%3E%3Ccircle cx='120' cy='180' r='15' fill='%23C5B5E8'/%3E%3Ccircle cx='100' cy='150' r='15' fill='%23B5A7D9'/%3E%3Ccircle cx='120' cy='120' r='15' fill='%23C5B5E8'/%3E%3Ctext x='150' y='270' font-size='12' text-anchor='middle' fill='%236B8E7F'%3EHandmade%3C/text%3E%3C/svg%3E",
-                description: "A dreamy lavender wreath made with purple pipe cleaners. Beautiful wall decoration for your space.",
+                name: "Miniature Pot 3",
+                category: "miniatures",
+                price: "Price on Request",
+                image: "pot3.jpeg",
+                description: "A cute miniature handmade pot for gifting or adding a creative detail to your space.",
                 bestseller: false,
-                new: false,
+                new: true,
+                offer: false
+            },
+            {
+                id: 9,
+                name: "Hair Clip 1",
+                category: "hair",
+                price: "Price on Request",
+                image: "clips.jpeg",
+                description: "Handmade hair accessory crafted with colorful pipe-cleaner details. Lightweight and playful.",
+                bestseller: false,
+                new: true,
+                offer: false
+            },
+            {
+                id: 10,
+                name: "Hair Clip 2",
+                category: "hair",
+                price: "Price on Request",
+                image: "clips2.jpeg",
+                description: "A cute handmade hair accessory designed to add a colorful handmade touch to your look.",
+                bestseller: false,
+                new: true,
                 offer: false
             }
         ];
@@ -1777,13 +1804,13 @@
             const product = allProducts.find(p => p.id === id);
             const message = `Hi MIORA! I'm interested in the ${product.name}. Can you share more details?`;
             const encodedMessage = encodeURIComponent(message);
-                window.open(`https://wa.me/9326568564?text=${encodedMessage}`, '_blank');
+            window.open(`https://wa.me/9326568564?text=${encodedMessage}`, '_blank');
         }
 
         function openWhatsAppCustom() {
             const message = "Hi MIORA! I'd like to discuss a custom order. Please tell me more about what's possible!";
             const encodedMessage = encodeURIComponent(message);
-                window.open(`https://wa.me/9326568564?text=${encodedMessage}`, '_blank');
+            window.open(`https://wa.me/9326568564?text=${encodedMessage}`, '_blank');
         }
 
         function openInstagram() {
