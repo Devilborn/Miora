@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MIORA | Handmade pipe-cleaner flowers, keychains &amp; gifts</title>
+<meta name="description" content="MIORA makes handmade pipe-cleaner flowers, potted tulips, keychains and hair clips. Browse the collection and order on WhatsApp.">
+<meta name="theme-color" content="#F0E5D3">
+<meta property="og:title" content="MIORA | Floral handmade products">
+<meta property="og:description" content="Handmade pipe-cleaner flowers, keychains, hair clips and custom gifts. Order on WhatsApp.">
+<meta property="og:type" content="website">
+<link rel="icon" href="logo.jpeg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* colour: sampled from the MIORA logo so the logo sits on the page without a visible box */
+  --paper:#F0E5D3; --paper-2:#E6D8C0; --card:#FBF6EC;
+  --ink:#2B2C1A; --ink-2:#5A5842; --olive:#464726; --olive-2:#5E6034;
+  --blush:#EBC3B2; --gold:#8C6B21; --line:rgba(43,44,26,.16);
+  /* type */
+  --font-display:"Cormorant Garamond",Georgia,serif;
+  --font-body:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  /* space, shape, motion */
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:40px; --s7:64px;
+  --r:6px; --r-btn:4px;
+  --shadow:0 1px 2px rgba(43,44,26,.08),0 10px 24px -14px rgba(43,44,26,.35);
+  --ease:cubic-bezier(.2,.7,.2,1); --dur:.2s;
+  --hdr:56px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:calc(var(--hdr) + 8px)}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.55 var(--font-body);overflow-x:hidden;-webkit-tap-highlight-color:transparent}
+img{max-width:100%;display:block}
+h1,h2,h3,p,ul,ol{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--olive);outline-offset:2px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:8px;top:-60px;background:var(--olive);color:var(--card);padding:10px 14px;border-radius:var(--r-btn);z-index:100}
+.skip:focus{top:8px}
+.wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 var(--s4)}
+.icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 20px;border:1.5px solid var(--olive);border-radius:var(--r-btn);background:var(--olive);color:var(--card);font-weight:600;font-size:15px;text-decoration:none;cursor:pointer;transition:background var(--dur),transform var(--dur)}
+.btn:active{transform:scale(.97)}
+.btn.alt{background:transparent;color:var(--olive)}
+@media (hover:hover){.btn:hover{background:var(--olive-2);border-color:var(--olive-2);color:var(--card)}}
+
+/* header */
+.hdr{position:sticky;top:0;z-index:40;background:rgba(240,229,211,.96);border-bottom:1px solid var(--line)}
+.hdr-in{display:flex;align-items:center;gap:var(--s2);height:var(--hdr)}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto}
+.brand img{width:38px;height:38px}
+.brand span{font:700 21px/1 var(--font-display);letter-spacing:.2em}
+.ibtn{display:inline-grid;place-items:center;width:44px;height:44px;border:0;background:none;border-radius:var(--r-btn);cursor:pointer;text-decoration:none}
+.burger{position:relative}
+.burger i,.burger i::before,.burger i::after{display:block;width:20px;height:2px;background:var(--ink);border-radius:2px;transition:transform var(--dur),background var(--dur)}
+.burger i{position:relative}
+.burger i::before,.burger i::after{content:"";position:absolute;left:0}
+.burger i::before{top:-6px}.burger i::after{top:6px}
+.burger[aria-expanded="true"] i{background:transparent}
+.burger[aria-expanded="true"] i::before{transform:translateY(6px) rotate(45deg)}
+.burger[aria-expanded="true"] i::after{transform:translateY(-6px) rotate(-45deg)}
+.menu{display:none;position:absolute;left:0;right:0;top:100%;background:var(--paper);border-bottom:1px solid var(--line);padding:var(--s2) var(--s4) var(--s4);box-shadow:var(--shadow)}
+.menu.open{display:block}
+.menu a{display:flex;align-items:center;min-height:48px;text-decoration:none;font-weight:500;border-bottom:1px solid var(--line)}
+.menu li:last-child a{border-bottom:0}
+@media (min-width:768px){
+  .burger{display:none}
+  .menu{display:flex;position:static;background:none;border:0;box-shadow:none;padding:0;gap:var(--s5)}
+  .menu a{border:0;min-height:44px;font-size:15px}
+}
+
+/* hero */
+.hero{padding:var(--s5) 0 var(--s6)}
+.hero-grid{display:grid;gap:var(--s5)}
+.hero h1{font:600 clamp(2.3rem,10.5vw,4rem)/1 var(--font-display);letter-spacing:-.01em;max-width:13ch}
+.hero p.lead{margin-top:var(--s3);color:var(--ink-2);max-width:42ch;font-size:17px}
+.cta-row{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s5)}
+.cta-row .btn{flex:1 1 160px}
+.arches{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;align-items:end}
+.arch{aspect-ratio:3/4.3;border-radius:999px 999px var(--r) var(--r);overflow:hidden;background:var(--paper-2)}
+.arch:nth-child(2){aspect-ratio:3/5}
+.arch img{width:100%;height:100%;object-fit:cover}
+@media (min-width:860px){
+  .hero{padding:var(--s6) 0 var(--s7)}
+  .hero-grid{grid-template-columns:1fr 1.1fr;align-items:center;gap:var(--s6)}
+  .cta-row .btn{flex:0 0 auto}
+}
+@media (prefers-reduced-motion:no-preference){
+  .rise{animation:rise .7s var(--ease) both}
+  .rise:nth-child(2){animation-delay:.08s}.rise:nth-child(3){animation-delay:.16s}
+  .arch{animation:rise .8s var(--ease) both}
+  .arch:nth-child(2){animation-delay:.1s}.arch:nth-child(3){animation-delay:.2s}
+}
+@keyframes rise{from{opacity:0;transform:translateY(14px)}}
+
+/* how to order */
+.steps{display:grid;gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--card)}
+.steps ol{display:grid}
+.steps li{display:flex;gap:var(--s3);align-items:baseline;padding:var(--s3) 0;border-bottom:1px solid var(--line)}
+.steps li:last-child{border-bottom:0}
+.steps b{font:600 28px/1 var(--font-display);color:var(--olive);min-width:22px}
+.steps span{font-size:15px}
+@media (min-width:700px){.steps ol{grid-template-columns:repeat(3,1fr);gap:var(--s5)}.steps li{border:0;padding:var(--s4) 0}}
+
+/* sections */
+.sec{padding:var(--s6) 0 0}
+.sec-head{margin-bottom:var(--s4)}
+.sec-head h2,.story h2,.custom h2{font:600 clamp(1.9rem,7vw,2.7rem)/1.05 var(--font-display)}
+.sec-head p{color:var(--ink-2);margin-top:6px}
+
+/* categories */
+.cats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.cat{position:relative;display:block;aspect-ratio:4/3;border-radius:var(--r);overflow:hidden;text-decoration:none;color:#fff;background:var(--paper-2)}
+.cat img{width:100%;height:100%;object-fit:cover}
+.cat::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(30,31,14,.72),rgba(30,31,14,0) 55%)}
+.cat span{position:absolute;left:12px;right:12px;bottom:10px;z-index:1;font-weight:600;line-height:1.2}
+.cat small{display:block;font-weight:400;font-size:13px;opacity:.9}
+@media (min-width:760px){.cats{grid-template-columns:repeat(4,minmax(0,1fr))}.cat{aspect-ratio:3/4}}
+@media (hover:hover){.cat img{transition:transform .5s var(--ease)}.cat:hover img{transform:scale(1.04)}}
+
+/* search + filters */
+.search{position:relative;margin-bottom:var(--s3)}
+.search .icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--ink-2);pointer-events:none}
+.search input{width:100%;min-height:48px;padding:0 14px 0 44px;border:1px solid var(--line);border-radius:var(--r-btn);background:var(--card);font-size:16px}
+.chips{display:flex;gap:8px;overflow-x:auto;margin:0 calc(var(--s4) * -1);padding:2px var(--s4) 8px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;min-height:44px;padding:0 16px;border:1px solid var(--line);border-radius:var(--r-btn);background:var(--card);cursor:pointer;font-weight:500;font-size:15px;white-space:nowrap}
+.chip[aria-pressed="true"]{background:var(--olive);border-color:var(--olive);color:var(--card)}
+.meta{display:flex;justify-content:space-between;align-items:center;gap:var(--s3);min-height:36px;margin:var(--s2) 0 var(--s3);font-size:14px;color:var(--ink-2)}
+.link{background:none;border:0;padding:8px 0;color:var(--olive);font-weight:600;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.savedbar{display:flex;flex-wrap:wrap;align-items:center;gap:var(--s3);justify-content:space-between;padding:var(--s3);margin-bottom:var(--s3);background:var(--card);border:1px solid var(--line);border-radius:var(--r)}
+.savedbar[hidden]{display:none}
+.draftnote{padding:var(--s3);margin-bottom:var(--s3);background:var(--blush);border-radius:var(--r);font-size:14px}
+
+/* product grid */
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media (min-width:720px){.grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}}
+@media (min-width:1000px){.grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.card-main{display:block;width:100%;padding:0;border:0;background:none;text-align:left;cursor:pointer;transition:transform var(--dur)}
+.card-main:active{transform:scale(.985)}
+.card-main:focus-visible{outline-offset:-3px}
+.ph{display:block;position:relative;aspect-ratio:1/1;background:var(--bg,var(--paper-2));overflow:hidden}
+.ph img{width:100%;height:100%;object-fit:var(--fit,cover);object-position:var(--pos,50% 50%)}
+.ph.none,.ph.missing{display:grid;place-items:center;padding:var(--s3);text-align:center;font-size:13px;color:var(--ink-2);background:var(--paper-2)}
+.ph.none::after,.ph.missing::after{content:"Photo coming soon"}
+.ph.missing img{display:none}
+@media (hover:hover){.card .ph img{transition:transform .5s var(--ease)}.card:hover .ph img{transform:scale(1.03)}}
+.tag{position:absolute;left:8px;top:8px;padding:3px 8px;border-radius:3px;background:var(--card);color:var(--olive);font-size:12px;font-weight:600}
+.card-body{display:block;padding:10px 12px 14px}
+.card-cat{display:block;font-size:12px;color:var(--ink-2)}
+.card-name{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:2px;font-weight:600;font-size:15px;line-height:1.3;min-height:2.6em}
+.card-price{display:block;margin-top:6px;font-size:14px}
+.ask{color:var(--ink-2)}
+s{color:var(--ink-2);margin-left:4px}
+.pnote{color:var(--ink-2);font-size:13px;margin-left:4px}
+.heart{position:absolute;right:4px;top:4px;display:grid;place-items:center;width:44px;height:44px;border:0;background:none;cursor:pointer;color:var(--olive)}
+.heart span{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:rgba(251,246,236,.92);transition:transform var(--dur)}
+.heart:active span{transform:scale(.88)}
+.heart[aria-pressed="true"] svg{fill:#B4483A;stroke:#B4483A}
+.empty{grid-column:1/-1;padding:var(--s6) var(--s4);text-align:center;background:var(--card);border:1px dashed var(--line);border-radius:var(--r)}
+.empty p{margin-bottom:var(--s3);color:var(--ink-2)}
+
+/* story */
+.story{display:grid;gap:var(--s5);align-items:center}
+.story .ph{aspect-ratio:4/5;border-radius:var(--r)}
+.story p{margin-top:var(--s3);color:var(--ink-2);max-width:56ch}
+@media (min-width:760px){.story{grid-template-columns:.8fr 1fr;gap:var(--s6)}}
+
+/* custom order */
+.custom{background:var(--olive);color:var(--card);border-radius:var(--r);padding:var(--s5) var(--s4);display:grid;gap:var(--s5)}
+.custom p.sub{margin-top:var(--s3);opacity:.9;max-width:48ch}
+.form{display:grid;gap:var(--s3)}
+.form label{display:grid;gap:6px;font-size:14px;font-weight:500}
+.form input,.form select,.form textarea{width:100%;min-height:48px;padding:10px 12px;border:1px solid transparent;border-radius:var(--r-btn);background:var(--card);color:var(--ink);font-size:16px}
+.form textarea{min-height:104px;resize:vertical}
+.form .btn{background:var(--blush);border-color:var(--blush);color:var(--ink)}
+.form .hint{font-size:13px;opacity:.85}
+.custom :focus-visible{outline-color:var(--blush)}
+@media (min-width:860px){.custom{grid-template-columns:1fr 1fr;padding:var(--s6);gap:var(--s6);align-items:start}}
+
+/* contact + footer */
+.contact{display:grid;gap:12px}
+.contact a{display:flex;align-items:center;gap:var(--s3);min-height:64px;padding:var(--s3) var(--s4);background:var(--card);border:1px solid var(--line);border-radius:var(--r);text-decoration:none}
+.contact a b{display:block;font-weight:600}
+.contact a small{display:block;color:var(--ink-2);font-size:14px;word-break:break-word}
+@media (min-width:760px){.contact{grid-template-columns:repeat(3,1fr)}}
+.ftr{margin-top:var(--s7);padding:var(--s5) 0 var(--s6);border-top:1px solid var(--line);font-size:14px;color:var(--ink-2)}
+.ftr-in{display:flex;flex-wrap:wrap;gap:var(--s3) var(--s5);align-items:center;justify-content:space-between}
+.ftr nav{display:flex;flex-wrap:wrap;gap:0 var(--s4)}
+.ftr nav a{display:inline-flex;align-items:center;min-height:44px}
+
+/* product dialog: bottom sheet on phones, two-column card on larger screens */
+dialog.pm{width:100%;max-width:100%;max-height:92dvh;margin:auto 0 0;padding:0;border:0;border-radius:14px 14px 0 0;background:var(--card);color:var(--ink);overflow:auto;overscroll-behavior:contain}
+dialog.pm::backdrop{background:rgba(43,44,26,.55)}
+dialog.pm[open]{animation:sheet .28s var(--ease)}
+@keyframes sheet{from{transform:translateY(28px);opacity:0}}
+@media (prefers-reduced-motion:reduce){dialog.pm[open]{animation:none}}
+.pm-bar{position:sticky;top:0;height:0;z-index:3;display:flex;justify-content:flex-end}
+.pm-close{margin:8px;width:44px;height:44px;border:0;border-radius:50%;background:rgba(251,246,236,.94);box-shadow:var(--shadow);display:grid;place-items:center;cursor:pointer}
+.pm-media .ph{aspect-ratio:1/1;max-height:56dvh;width:100%}
+.thumbs{display:flex;gap:8px;padding:8px 16px 0;overflow-x:auto}
+.thumbs button{flex:none;width:56px;height:56px;padding:0;border:2px solid transparent;border-radius:4px;overflow:hidden;background:none;cursor:pointer}
+.thumbs button[aria-current="true"]{border-color:var(--olive)}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.pm-info{padding:var(--s4) var(--s4) 0}
+.pm-cat{font-size:13px;color:var(--ink-2)}
+.pm-name{font:600 clamp(1.7rem,6vw,2.2rem)/1.08 var(--font-display);margin-top:2px}
+.pm-price{margin-top:var(--s2);font-size:20px;font-weight:600}
+.pm-desc{margin-top:var(--s3);color:var(--ink-2)}
+.pm-note{margin-top:var(--s2);font-size:14px;color:var(--ink-2)}
+.opts{display:grid;gap:var(--s3);margin-top:var(--s4)}
+.opts label{display:grid;gap:6px;font-size:14px;font-weight:600}
+.opts select{min-height:48px;padding:0 12px;border:1px solid var(--line);border-radius:var(--r-btn);background:var(--paper);font-weight:400;font-size:16px}
+.pm-cta{position:sticky;bottom:0;display:flex;gap:var(--s2);margin-top:var(--s4);padding:12px 16px calc(12px + env(safe-area-inset-bottom,0px));background:var(--card);border-top:1px solid var(--line)}
+.pm-cta .btn:first-child{flex:1}
+.pm-cta .btn[aria-pressed="true"]{background:var(--blush);border-color:var(--blush);color:var(--ink)}
+@media (min-width:760px){
+  dialog.pm{max-width:880px;margin:auto;border-radius:10px;max-height:88dvh}
+  .pm-grid{display:grid;grid-template-columns:1fr 1fr;align-items:start}
+  .pm-media{position:sticky;top:0}
+  .pm-media .ph{max-height:none}
+  .pm-info{padding-top:var(--s5)}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.6 7.4L3.5 20.5l1.4-4.2a8.5 8.5 0 1 1 15.6-4.6z"/><path d="M9 8.5c.3 2.6 2.6 5.2 5.8 6.1l1.3-1.3-2-1.1-.9.7c-.9-.4-1.6-1.1-2-2l.7-.9L10.8 8z"/></symbol>
+  <symbol id="i-ig" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.5s-8-4.9-8-10.7A4.6 4.6 0 0 1 12 7a4.6 4.6 0 0 1 8 2.8c0 5.8-8 10.7-8 10.7z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4 4"/></symbol>
+</svg>
+
+<a class="skip" href="#shop">Skip to products</a>
+
+<header class="hdr" id="header">
+  <div class="wrap hdr-in">
+    <a class="brand" href="#top" aria-label="MIORA, back to top"><img src="logo.jpeg" alt="" width="38" height="38"><span>MIORA</span></a>
+    <a class="ibtn" data-wa="Hi MIORA! I have a question." aria-label="Chat with MIORA on WhatsApp"><svg class="icon"><use href="#i-wa"/></svg></a>
+    <button class="ibtn burger" id="navToggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu"><i></i></button>
+    <nav aria-label="Main">
+      <ul class="menu" id="navMenu">
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#craft">Our craft</a></li>
+        <li><a href="#custom">Custom orders</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero" aria-labelledby="h1">
+    <div class="wrap hero-grid">
+      <div>
+        <h1 id="h1" class="rise">Flowers that never wilt, made by hand.</h1>
+        <p class="lead rise">Pipe-cleaner bouquets, potted tulips, keychains and hair clips from MIORA. Pick a piece, then order it on WhatsApp.</p>
+        <div class="cta-row rise">
+          <a class="btn" href="#shop">Shop now</a>
+          <a class="btn alt" href="#custom">Custom order</a>
+        </div>
+      </div>
+      <div class="arches" aria-label="Some MIORA creations">
+        <div class="arch"><img src="pot1.jpeg" alt="Pastel pipe-cleaner tulips in a pink pot" width="1151" height="1367" fetchpriority="high"></div>
+        <div class="arch"><img src="pot3.jpeg" alt="Pipe-cleaner sunflower in a tan pot" style="object-position:50% 35%" width="1024" height="1536" fetchpriority="high"></div>
+        <div class="arch"><img src="KC1.jpeg" alt="Rainbow and cloud pipe-cleaner keychain" width="894" height="1200" fetchpriority="high"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="steps">
+    <div class="wrap">
+      <ol aria-label="How to order">
+        <li><b>1</b><span>Pick a piece and tap <strong>Order on WhatsApp</strong>.</span></li>
+        <li><b>2</b><span>Your message opens with the item already filled in.</span></li>
+        <li><b>3</b><span>MIORA confirms price, colours and delivery with you.</span></li>
+      </ol>
+    </div>
+  </div>
+
+  <section class="sec" id="categories" aria-labelledby="h-cat">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="h-cat">Shop by category</h2></div>
+      <div class="cats" id="catTiles"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="shop" aria-labelledby="h-shop">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="h-shop">The collection</h2><p>Tap any piece for details and to order.</p></div>
+      <form class="search" role="search" id="searchForm">
+        <label class="vh" for="searchInput">Search products</label>
+        <svg class="icon"><use href="#i-search"/></svg>
+        <input type="search" id="searchInput" placeholder="Search tulip, keychain, clips…" autocomplete="off" enterkeyhint="search">
+      </form>
+      <div class="chips" id="chips" role="group" aria-label="Filter products"></div>
+      <div id="draftNote"></div>
+      <div class="savedbar" id="savedBar" hidden>
+        <span id="savedBarText"></span>
+        <a class="btn" id="savedOrder" target="_blank" rel="noopener"><svg class="icon"><use href="#i-wa"/></svg>Enquire about saved</a>
+      </div>
+      <div class="meta"><span id="count" aria-live="polite"></span><button type="button" class="link" id="resetTop" hidden>Clear filters</button></div>
+      <ul class="grid" id="grid"></ul>
+      <noscript><p>Please turn on JavaScript to browse the collection, or message us on WhatsApp.</p></noscript>
+    </div>
+  </section>
+
+  <section class="sec" id="craft" aria-labelledby="h-craft">
+    <div class="wrap story">
+      <div class="ph" style="--pos:50% 35%"><img src="CUSTOM1.jpeg" alt="A hand holding a MIORA bouquet wrapped in black and gold" loading="lazy"></div>
+      <div>
+        <h2 id="h-craft">Shaped by hand, one piece at a time</h2>
+        <p>Every MIORA piece is twisted, coiled and shaped from pipe cleaners (chenille stems). Flowers that stay fresh, keychains for your bag, clips for your hair, and gifts made around a person.</p>
+        <p>Because each one is handmade, small differences in shape and shade are part of it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="custom" aria-labelledby="h-custom">
+    <div class="wrap">
+      <div class="custom">
+        <div>
+          <h2 id="h-custom">Want something made for you?</h2>
+          <p class="sub">Tell us your idea: a colour palette, a character, a name, a gift for someone. MIORA replies on WhatsApp to confirm what's possible and the price.</p>
+        </div>
+        <form class="form" id="customForm">
+          <label>What would you like?
+            <select name="type" id="customType" required></select>
+          </label>
+          <label>Colours or theme
+            <input name="colours" type="text" placeholder="e.g. pastel pink and white" autocomplete="off">
+          </label>
+          <label>Your idea
+            <textarea name="idea" placeholder="Describe it, or mention who it's for."></textarea>
+          </label>
+          <label>Needed by (optional)
+            <input name="date" type="text" placeholder="e.g. 12 November" autocomplete="off">
+          </label>
+          <button class="btn" type="submit"><svg class="icon"><use href="#i-wa"/></svg>Send on WhatsApp</button>
+          <p class="hint">This opens WhatsApp with your message ready to send.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="contact" aria-labelledby="h-contact">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="h-contact">Get in touch</h2></div>
+      <div class="contact">
+        <a data-wa="Hi MIORA!"><svg class="icon"><use href="#i-wa"/></svg><span><b>WhatsApp</b><small data-phone></small></span></a>
+        <a data-ig><svg class="icon"><use href="#i-ig"/></svg><span><b>Instagram</b><small data-ig-text></small></span></a>
+        <a data-mail><svg class="icon"><use href="#i-mail"/></svg><span><b>Email</b><small data-mail-text></small></span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap ftr-in">
+    <span>&copy; 2026 MIORA. Handmade floral products.</span>
+    <nav aria-label="Footer"><a href="#shop">Shop</a><a href="#custom">Custom orders</a><a href="#contact">Contact</a></nav>
+  </div>
+</footer>
+
+<dialog class="pm" id="pm" aria-labelledby="pmName">
+  <div class="pm-bar"><button type="button" class="pm-close" data-close aria-label="Close product details"><svg class="icon"><use href="#i-x"/></svg></button></div>
+  <div id="pmBody"></div>
+</dialog>
+<div class="vh" role="status" aria-live="polite" id="announce"></div>
+
+<!-- ============================================================
+     CATALOGUE: edit this block to change products, contacts and categories.
+     To add a product, copy one entry, give it a new unique id, and save.
+     Categories with no visible products are hidden automatically.
+     Set price to a number (rupees) once confirmed. null shows "Ask for price".
+     Optional fields: sizes:[{label,price}], colors:[...], images:[extra photos],
+       priceNote:"per pair", new:true, bestseller:true, offer:{price:199},
+       note:"small print", draft:true (hidden from customers; preview with ?drafts=1)
+     ============================================================ -->
+<script>
+const BRAND = {
+  whatsapp: "919326568564",        // CONFIRM: 10-digit number from your old file with India code 91 added
+  instagram: "miora_hand_made",    // CONFIRM: old file also used "miora.handmade"
+  email: "mahakjaiswal917@gmail.com"
+};
+
+const CATEGORIES = [
+  {id:"flowers",   label:"Flowers & bouquets"},
+  {id:"diya",      label:"Diyas"},
+  {id:"hair",      label:"Hair accessories"},
+  {id:"keychains", label:"Keychains"},
+  {id:"miniatures",label:"Miniature pots"},
+  {id:"frames",    label:"Personalised frames"},
+  {id:"resin",     label:"Resin"},
+  {id:"gifts",     label:"Gifts"},
+  {id:"custom",    label:"Custom creations"}
+];
+
+const PRODUCTS = [
+  {id:"spiderman-bouquet", name:"Spider-Man Theme Bouquet", category:"flowers", price:null, image:"CUSTOM1.jpeg", pos:"50% 35%",
+   description:"Hand-wrapped bouquet with a red and blue pipe-cleaner flower, a Spider-Man style tulip and a white web with a heart, tied with a red bow in black and gold wrapping.",
+   tags:["bouquet","spiderman","spider-man","superhero","gift","custom","theme"]},
+  {id:"spiderman-tulip", name:"Spider-Man Tulip", category:"flowers", price:null, image:"CUSTPM2.jpeg",
+   description:"A single handmade red tulip with a Spider-Man style mask, on a green pipe-cleaner stem and wrapped in black and gold cellophane.",
+   note:"The photo shows it in a black vase. Ask whether a vase is included.",
+   tags:["single flower","tulip","spiderman","spider-man","superhero","gift","custom","theme"]},
+
+  {id:"pastel-tulip-pot", name:"Pastel Tulip Pot", category:"miniatures", price:null, image:"pot1.jpeg", fit:"contain", bg:"linear-gradient(#e8ded4,#f9f0e9)",
+   description:"Pink, magenta and lilac pipe-cleaner tulips in a pink pot finished with a magenta bow. A small piece for a desk or shelf.",
+   tags:["tulip","flower pot","plant","decor","desk","gift","pink","purple"]},
+  {id:"red-tulip-heart-pot", name:"Red Tulip Heart Pot", category:"miniatures", price:null, image:"pot2.jpeg",
+   description:"Three red tulips with green leaves in a brown pot with a white band and a red heart.",
+   tags:["tulip","flower pot","plant","decor","desk","gift","heart","red","love"]},
+  {id:"sunflower-pot", name:"Sunflower Pot", category:"miniatures", price:null, image:"pot3.jpeg", fit:"contain", bg:"linear-gradient(#f4f0e7,#faf7f0)",
+   description:"A bright yellow pipe-cleaner sunflower with green leaves in a tan pot tied with an orange bow.",
+   tags:["sunflower","flower pot","plant","decor","desk","gift","yellow"]},
+
+  {id:"rainbow-keychain", name:"Rainbow & Clouds Keychain", category:"keychains", price:null, image:"KC1.jpeg",
+   description:"A pipe-cleaner rainbow resting on fluffy white clouds, on a metal key ring. Good for bags and keys, and easy to gift.",
+   tags:["keyring","key ring","bag charm","rainbow","cloud","gift"]},
+  {id:"cherry-keychain", name:"Cherry Keychain", category:"keychains", price:null, image:"KC2.jpeg",
+   description:"Two coiled red cherries with a green bow-shaped stem, on a metal key ring.",
+   tags:["keyring","key ring","bag charm","cherry","cherries","red","gift"]},
+  {id:"evil-eye-keychain", name:"Evil Eye Keychain", category:"keychains", price:null, image:"KC3.jpeg",
+   description:"A round evil-eye (nazar) design coiled in navy, light blue, white and royal blue pipe cleaner, on a metal key ring.",
+   tags:["keyring","key ring","bag charm","nazar","evil eye","blue","gift"]},
+
+  {id:"blue-pearl-clips", name:"Blue Pearl Flower Clips", category:"hair", price:null, priceNote:"pair (confirm)", image:"clips2.jpeg", pos:"44% 50%",
+   description:"A pair of snap hair clips topped with deep blue pipe-cleaner flowers and a pearl centre.",
+   tags:["hair clip","hairclip","snap clip","clips","barrette","pearl","blue","flower","pair"]},
+  {id:"red-burst-clips", name:"Black Pom & Red Burst Clips", category:"hair", price:null, priceNote:"pair (confirm)", image:"clips.jpeg", pos:"34% 50%",
+   description:"A pair of snap hair clips with a soft black pom and red pipe-cleaner petals.",
+   tags:["hair clip","hairclip","snap clip","clips","barrette","red","black","pom","pair"]},
+
+  /* Drafts: no photo or details yet, so these stay hidden until you complete them. */
+  {id:"diya-small", name:"Small Handmade Diya", category:"diya", price:null, image:null, draft:true,
+   description:"TO CONFIRM: size, materials and what is included.", tags:["diya","diwali","festive","decor"]},
+  {id:"diya-large", name:"Large Handmade Diya", category:"diya", price:null, image:null, draft:true,
+   description:"TO CONFIRM: size, materials and what is included.", tags:["diya","diwali","festive","decor"]},
+  {id:"diya-centre", name:"Centre-Table Diya", category:"diya", price:null, image:null, draft:true,
+   description:"TO CONFIRM: single-centrepiece design, size and materials.", tags:["diya","diwali","festive","decor","centrepiece","table"]},
+  {id:"hairband", name:"Handmade Hairband", category:"hair", price:null, image:null, draft:true,
+   description:"TO CONFIRM: designs, colours and what is included.", tags:["hairband","headband","hair"]}
+];
+</script>
+
+<script>
+(() => {
+  'use strict';
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const inr = n => new Intl.NumberFormat('en-IN', {style:'currency', currency:'INR', maximumFractionDigits:0}).format(n);
+  const wa = t => `https://wa.me/${BRAND.whatsapp}?text=${encodeURIComponent(t)}`;
+  const showDrafts = new URLSearchParams(location.search).has('drafts');
+  const items = PRODUCTS.filter(p => showDrafts || !p.draft);
+  const byId = id => PRODUCTS.find(p => p.id === id);
+  const catLabel = id => (CATEGORIES.find(c => c.id === id) || {label:id}).label;
+  const cats = CATEGORIES.filter(c => items.some(p => p.category === c.id));
+
+  /* ---------- saved items (safe if storage is blocked or corrupted) ---------- */
+  const KEY = 'miora.saved.v2';
+  const saved = (() => {
+    try {
+      const a = JSON.parse(localStorage.getItem(KEY));
+      return new Set(Array.isArray(a) ? a.filter(id => byId(id)) : []);
+    } catch (e) { return new Set(); }
+  })();
+  const persist = () => { try { localStorage.setItem(KEY, JSON.stringify([...saved])); } catch (e) {} };
+
+  const state = {f:'all', q:''};
+
+  /* ---------- rendering helpers ---------- */
+  function phStyle(p) {
+    return [p.bg && `--bg:${p.bg}`, p.fit && `--fit:${p.fit}`, p.pos && `--pos:${p.pos}`].filter(Boolean).join(';');
+  }
+  function imgTag(p, src, eager) {
+    return `<img src="${esc(src)}" alt="${esc(p.alt || p.name + ', handmade by MIORA')}" ${eager ? '' : 'loading="lazy" decoding="async"'}>`;
+  }
+  function priceHTML(p, si = 0, card = false) {
+    const sz = p.sizes && p.sizes[si];
+    let n = sz && sz.price != null ? sz.price : p.price;
+    if (card && p.sizes) {
+      const all = p.sizes.map(s => s.price).filter(v => v != null);
+      if (all.length) return `From ${inr(Math.min(...all))}`;
+    }
+    if (n == null) return '<span class="ask">Ask for price</span>';
+    const note = p.priceNote ? `<span class="pnote">${esc(p.priceNote)}</span>` : '';
+    if (p.offer && p.offer.price != null && !p.sizes) return `<strong>${inr(p.offer.price)}</strong><s>${inr(n)}</s>${note}`;
+    return `<strong>${inr(n)}</strong>${note}`;
+  }
+  const flag = p => p.offer ? 'Offer' : p.bestseller ? 'Bestseller' : p.new ? 'New' : (p.draft ? 'Draft' : '');
+
+  function cardHTML(p) {
+    const on = saved.has(p.id), t = flag(p);
+    const media = p.image
+      ? `<span class="ph" style="${esc(phStyle(p))}">${imgTag(p, p.image)}${t ? `<span class="tag">${t}</span>` : ''}</span>`
+      : `<span class="ph none">${t ? `<span class="tag">${t}</span>` : ''}</span>`;
+    return `<li class="card">
+      <button type="button" class="card-main" data-open="${esc(p.id)}">
+        ${media}
+        <span class="card-body"><span class="card-cat">${esc(catLabel(p.category))}</span><span class="card-name">${esc(p.name)}</span><span class="card-price">${priceHTML(p, 0, true)}</span></span>
+      </button>
+      <button type="button" class="heart" data-save="${esc(p.id)}" aria-pressed="${on}" aria-label="Save ${esc(p.name)}"><span><svg class="icon"><use href="#i-heart"/></svg></span></button>
+    </li>`;
+  }
+
+  /* ---------- filtering ---------- */
+  function visible() {
+    const words = state.q.toLowerCase().split(/\s+/).filter(Boolean);
+    return items.filter(p => {
+      const f = state.f;
+      if (f === 'saved' && !saved.has(p.id)) return false;
+      if (f.startsWith('cat:') && p.category !== f.slice(4)) return false;
+      if (f === 'flag:new' && !p.new) return false;
+      if (f === 'flag:bestseller' && !p.bestseller) return false;
+      if (f === 'flag:offer' && !p.offer) return false;
+      if (!words.length) return true;
+      const hay = [p.name, p.description, catLabel(p.category), (p.tags || []).join(' '),
+        (p.sizes || []).map(s => s.label).join(' '), (p.colors || []).join(' ')].join(' ').toLowerCase();
+      return words.every(w => hay.includes(w));
+    });
+  }
+
+  function renderGrid() {
+    const list = visible(), grid = $('#grid');
+    const filtered = state.f !== 'all' || state.q.trim() !== '';
+    if (!list.length) {
+      const msg = state.f === 'saved' && !state.q
+        ? 'Nothing saved yet. Tap the heart on any piece to keep it here.'
+        : 'No pieces match that search. Try a different word or clear the filters.';
+      grid.innerHTML = `<li class="empty"><p>${msg}</p><button type="button" class="btn alt" data-reset>Show everything</button></li>`;
+    } else grid.innerHTML = list.map(cardHTML).join('');
+    $('#count').textContent = list.length === items.length ? `${items.length} pieces` : `Showing ${list.length} of ${items.length} pieces`;
+    $('#resetTop').hidden = !filtered;
+    const bar = $('#savedBar'), show = state.f === 'saved' && saved.size > 0;
+    bar.hidden = !show;
+    if (show) {
+      $('#savedBarText').textContent = `${saved.size} saved. Send them in one message.`;
+      $('#savedOrder').href = wa(`Hi MIORA! I'm interested in these pieces:\n${[...saved].map(id => '• ' + byId(id).name).join('\n')}\n\nCould you share prices and availability?`);
+    }
+  }
+
+  function buildChips() {
+    const defs = [{k:'all', l:'All'}, ...cats.map(c => ({k:'cat:' + c.id, l:c.label}))];
+    if (items.some(p => p.new)) defs.push({k:'flag:new', l:'New'});
+    if (items.some(p => p.bestseller)) defs.push({k:'flag:bestseller', l:'Bestsellers'});
+    if (items.some(p => p.offer)) defs.push({k:'flag:offer', l:'Offers'});
+    defs.push({k:'saved', l:'Saved'});
+    $('#chips').innerHTML = defs.map(d => `<button type="button" class="chip" data-f="${esc(d.k)}" aria-pressed="${d.k === state.f}">${esc(d.l)}${d.k === 'saved' ? ' (<span id="savedCount">' + saved.size + '</span>)' : ''}</button>`).join('');
+  }
+
+  function setFilter(f) {
+    state.f = f;
+    $$('#chips .chip').forEach(c => c.setAttribute('aria-pressed', String(c.dataset.f === f)));
+    renderGrid();
+  }
+  function resetAll() {
+    state.q = ''; $('#searchInput').value = ''; setFilter('all');
+  }
+
+  /* ---------- category tiles ---------- */
+  function buildTiles() {
+    $('#catTiles').innerHTML = cats.map(c => {
+      const list = items.filter(p => p.category === c.id && p.image);
+      const cover = list.find(p => p.fit !== 'contain') || list[0];
+      const n = items.filter(p => p.category === c.id).length;
+      return `<a class="cat" href="#shop" data-cat="${esc(c.id)}">${cover ? `<img src="${esc(cover.image)}" alt="" loading="lazy" style="object-position:${esc(cover.pos || '50% 50%')}">` : ''}<span>${esc(c.label)}<small>${n} ${n === 1 ? 'piece' : 'pieces'}</small></span></a>`;
+    }).join('');
+  }
+
+  /* ---------- saving ---------- */
+  function toggleSave(id) {
+    const p = byId(id); if (!p) return;
+    const on = !saved.has(id);
+    on ? saved.add(id) : saved.delete(id);
+    persist();
+    $$(`[data-save="${CSS.escape(id)}"]`).forEach(b => b.setAttribute('aria-pressed', String(on)));
+    const sc = $('#savedCount'); if (sc) sc.textContent = saved.size;
+    $('#announce').textContent = on ? `${p.name} saved` : `${p.name} removed from saved`;
+    if (state.f === 'saved') renderGrid();
+    if (cur && cur.p.id === id) syncModal();
+  }
+
+  /* ---------- product dialog ---------- */
+  const dlg = $('#pm'), body = $('#pmBody');
+  let cur = null;
+
+  function orderText() {
+    const {p, size, color} = cur, opts = [];
+    if (p.sizes) opts.push('Size: ' + p.sizes[size].label);
+    if (p.colors && color) opts.push('Colour: ' + color);
+    const sz = p.sizes && p.sizes[size], n = sz && sz.price != null ? sz.price : p.price;
+    return `Hi MIORA! I'd like to order:\n• ${p.name}${opts.length ? ' (' + opts.join(', ') + ')' : ''}${n != null ? '\nPrice on site: ' + inr(n) : ''}\n\nName:\nCity:`;
+  }
+  function syncModal() {
+    $('#pmPrice').innerHTML = priceHTML(cur.p, cur.size);
+    $('#pmOrder').href = wa(orderText());
+    const b = $('#pmSave'), on = saved.has(cur.p.id);
+    b.setAttribute('aria-pressed', String(on));
+    b.querySelector('span').textContent = on ? 'Saved' : 'Save';
+  }
+  function openProduct(id, opener) {
+    const p = byId(id); if (!p) return;
+    cur = {p, size:0, color:'', opener};
+    const pics = [p.image, ...(p.images || [])].filter(Boolean);
+    const sizes = p.sizes ? `<label>Size<select id="optSize">${p.sizes.map((s, i) => `<option value="${i}">${esc(s.label)}${s.price != null ? ' (' + inr(s.price) + ')' : ''}</option>`).join('')}</select></label>` : '';
+    const cols = p.colors ? `<label>Colour<select id="optColor"><option value="">Choose a colour</option>${p.colors.map(c => `<option>${esc(c)}</option>`).join('')}</select></label>` : '';
+    body.innerHTML = `<div class="pm-grid">
+      <div class="pm-media">
+        <div class="ph ${p.image ? '' : 'none'}" style="${esc(phStyle(p))}" id="pmPh">${p.image ? imgTag(p, p.image, true).replace('<img', '<img id="pmImg"') : ''}</div>
+        ${pics.length > 1 ? `<div class="thumbs">${pics.map((s, i) => `<button type="button" data-pic="${esc(s)}" aria-label="Photo ${i + 1} of ${pics.length}" ${i ? '' : 'aria-current="true"'}><img src="${esc(s)}" alt=""></button>`).join('')}</div>` : ''}
+      </div>
+      <div>
+        <div class="pm-info">
+          <div class="pm-cat">${esc(catLabel(p.category))}</div>
+          <h2 class="pm-name" id="pmName">${esc(p.name)}</h2>
+          <div class="pm-price" id="pmPrice"></div>
+          <p class="pm-desc">${esc(p.description)}</p>
+          ${p.note ? `<p class="pm-note">${esc(p.note)}</p>` : ''}
+          ${sizes || cols ? `<div class="opts">${sizes}${cols}</div>` : ''}
+          <p class="pm-note">Availability, colours and delivery are confirmed with you on WhatsApp.</p>
+        </div>
+        <div class="pm-cta">
+          <a class="btn" id="pmOrder" target="_blank" rel="noopener"><svg class="icon"><use href="#i-wa"/></svg>Order on WhatsApp</a>
+          <button type="button" class="btn alt" id="pmSave" aria-pressed="false"><svg class="icon"><use href="#i-heart"/></svg><span>Save</span></button>
+        </div>
+      </div></div>`;
+    syncModal();
+    document.documentElement.style.overflow = 'hidden';
+    dlg.scrollTop = 0;
+    typeof dlg.showModal === 'function' ? dlg.showModal() : dlg.setAttribute('open', '');
+  }
+  dlg.addEventListener('close', () => {
+    document.documentElement.style.overflow = '';
+    const o = cur && cur.opener; cur = null;
+    if (o && document.contains(o)) o.focus({preventScroll:true});
+  });
+  dlg.addEventListener('click', e => {
+    if (e.target === dlg || e.target.closest('[data-close]')) return dlg.close();
+    const pic = e.target.closest('[data-pic]');
+    if (pic) {
+      $('#pmImg').src = pic.dataset.pic;
+      $$('.thumbs button', dlg).forEach(b => b.removeAttribute('aria-current'));
+      pic.setAttribute('aria-current', 'true');
+    }
+    if (e.target.closest('#pmSave')) toggleSave(cur.p.id);
+  });
+  dlg.addEventListener('change', e => {
+    if (e.target.id === 'optSize') cur.size = +e.target.value;
+    if (e.target.id === 'optColor') cur.color = e.target.value;
+    syncModal();
+  });
+
+  /* ---------- menu ---------- */
+  const menu = $('#navMenu'), toggle = $('#navToggle');
+  function setMenu(open) {
+    menu.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  toggle.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
+  menu.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('click', e => { if (!e.target.closest('#header')) setMenu(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && menu.classList.contains('open')) { setMenu(false); toggle.focus(); } });
+  matchMedia('(min-width:768px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
+
+  /* ---------- page events ---------- */
+  $('#grid').addEventListener('click', e => {
+    const s = e.target.closest('[data-save]');
+    if (s) return toggleSave(s.dataset.save);
+    const o = e.target.closest('[data-open]');
+    if (o) return openProduct(o.dataset.open, o);
+    if (e.target.closest('[data-reset]')) resetAll();
+  });
+  $('#chips').addEventListener('click', e => { const c = e.target.closest('[data-f]'); if (c) setFilter(c.dataset.f); });
+  $('#catTiles').addEventListener('click', e => { const c = e.target.closest('[data-cat]'); if (c) { state.q = ''; $('#searchInput').value = ''; setFilter('cat:' + c.dataset.cat); } });
+  $('#searchInput').addEventListener('input', e => { state.q = e.target.value; renderGrid(); });
+  $('#searchForm').addEventListener('submit', e => { e.preventDefault(); $('#searchInput').blur(); });
+  $('#resetTop').addEventListener('click', resetAll);
+
+  /* ---------- custom order form ---------- */
+  $('#customType').innerHTML = [...CATEGORIES.map(c => c.label), 'Something else'].map(l => `<option>${esc(l)}</option>`).join('');
+  $('#customForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const d = new FormData(e.target), line = (k, v) => v ? `${k}: ${v}\n` : '';
+    const text = `Hi MIORA! I'd like a custom order.\n${line('Item', d.get('type'))}${line('Colours/theme', d.get('colours').trim())}${line('Idea', d.get('idea').trim())}${line('Needed by', d.get('date').trim())}\nCould you tell me what's possible and the price?`;
+    window.open(wa(text), '_blank', 'noopener');
+  });
+
+  /* ---------- contact links from one source of truth ---------- */
+  $$('[data-wa]').forEach(a => { a.href = wa(a.dataset.wa); a.target = '_blank'; a.rel = 'noopener'; });
+  $$('[data-ig]').forEach(a => { a.href = 'https://instagram.com/' + BRAND.instagram; a.target = '_blank'; a.rel = 'noopener'; });
+  $$('[data-ig-text]').forEach(el => el.textContent = '@' + BRAND.instagram);
+  $$('[data-mail]').forEach(a => a.href = 'mailto:' + BRAND.email);
+  $$('[data-mail-text]').forEach(el => el.textContent = BRAND.email);
+  const w = BRAND.whatsapp;
+  $$('[data-phone]').forEach(el => el.textContent = `+${w.slice(0, 2)} ${w.slice(2, 7)} ${w.slice(7)}`);
+
+  /* ---------- image fallback (error events do not bubble, so capture) ---------- */
+  document.addEventListener('error', e => {
+    const t = e.target;
+    if (t.tagName === 'IMG' && t.closest('.ph')) t.closest('.ph').classList.add('missing');
+  }, true);
+
+  if (showDrafts) $('#draftNote').innerHTML = '<p class="draftnote">Preview mode: draft products are shown. Customers will not see them.</p>';
+  buildTiles(); buildChips(); renderGrid();
+})();
+</script>
+</body>
+</html>
